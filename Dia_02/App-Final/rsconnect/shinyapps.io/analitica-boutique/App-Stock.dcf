@@ -1,0 +1,10 @@
+name: App-Stock
+title: App-Stock
+username: analitica-boutique
+account: analitica-boutique
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10152811
+bundleId: 7787298
+url: https://analitica-boutique.shinyapps.io/App-Stock/
+version: 1
