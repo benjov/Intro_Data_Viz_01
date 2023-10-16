@@ -8,6 +8,11 @@
 # Comenzando con R: Comience descargando R y RStudio IDE, busca la versión más 
 # adecuada para ti https://posit.co/download/rstudio-desktop/
 
+# Usaremos lenguaje R en la interfaz de RStudio 
+# (R Studio es un IDE o entorno de desarrollo integrado)
+# Eso significa que RStudio es un programa para manejar R y 
+# utilizarlo de manera más cómoda.
+
 # ****************************************************************************
 
 # Instalando paquetes
@@ -37,7 +42,8 @@ library(quantmod)
 
 getSymbols("AAPL") # Apple Inc, NASDAQ: AAPL
 
-getSymbols("AAPL", src = "yahoo", from = "2010-01-01", to = "2023-10-10", periodicity = "daily")
+getSymbols("AAPL", src = "yahoo", from = "2010-01-01", 
+           to = "2023-10-15", periodicity = "daily")
 
 # Imprimamos el precio de cierre
 AAPL$AAPL.Close
@@ -67,7 +73,7 @@ GDP_DF$Date <- as.Date( rownames(GDP_DF) )
 
 g1 <- ggplot( data = GDP_DF , aes( x = GDP_DF$Date, y = GDP_DF$GDP ) ) 
       # Define el gráfico como un objeto de gplot
-g1 <- g1 + geom_line ( color = "darkblue", size = 1.5 ) # Define el objeto geométrico
+g1 <- g1 + geom_line( color = "darkblue", linewidth = 1.5 ) # Define el objeto geométrico
 g1 <- g1 + labs( title = "Gross Domestic Product", subtitle = "Frequency: Quarterly") 
       # Títulos y subtítulos
 g1 <- g1 + xlab("Fecha") + ylab("Billions of Dollars") # Títulos de ejes

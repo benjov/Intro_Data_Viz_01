@@ -15,21 +15,6 @@ R Markdown proporciona un marco de creación para la ciencia de datos. Puede uti
 
 Los documentos de R Markdown son totalmente reproducibles y admiten docenas de formatos de salida estáticos y dinámicos, incluidos HTML, PDF, MS Word, Beamer, diapositivas HTML5, folletos estilo Tufte, libros, paneles, shiny apps, artículos científicos, sitios web y más.
 
-# Usando R
-
-Usaremos lenguaje R en la interfaz de RStudio (R Studio es un IDE o entorno de desarrollo integrado). Eso significa que RStudio es un programa para manejar R y utilizarlo de manera más cómoda.
-
-## Ayuda para usar R
-Cuando necesite obtener más información sobre una función o paquete de R:
-
-* Visita https://rdocumentation.org/, una base de datos con capacidad de búsqueda de documentación de R.
-
-* Pregunta y pide ayuda en https://stackoverflow.com/, un foro de búsqueda de preguntas y respuestas sobre programación.
-
-* Pide ayuda a la comunidad de usuarios de R y RStudio en la comunidad Posit (https://community.rstudio.com/)
-
-* Pregunta a ChatGPT, una de las soluciones más eficaces (en unos días tendremos un curso de como hacer uso profesional de los servicios de OpenIA)
-
 # Chunk Options
 * include = FALSE (evita que el código y los resultados aparezcan en el archivo terminado. R Markdown aún ejecuta el código en el fragmento y los resultados pueden ser utilizados por otros fragmentos)
 * echo = FALSE (evita que el código, pero no los resultados, aparezcan en el archivo terminado. Esta es una forma útil de incrustar figuras)
@@ -54,7 +39,7 @@ Usaremos el "Manual Técnico Uso de Servicio Web para descarga de Precios Margin
 
 ## Instalación de paquetaría
 
-```{r paquetes, include = TRUE, warning = FALSE }
+```{r paquetes, include = TRUE, warning = FALSE, message = FALSE }
 #install.packages("plotly") # Paquetería de visualización interactiva
 #install.packages("httr") # Biblioteca que tiene funciones para consulta Web
 # Do you want to install from sources the package which needs compilation? (Yes/no/cancel) Y
@@ -137,7 +122,7 @@ df_Means <- data.frame( PML_08MDN.115 = mean(as.numeric(Datos_PML$PML_08MDN.115)
 
 datatable( df_Means, rownames = F, options = list(ordering = T), 
                filter = list( position = 'top', clear = T )) %>% 
-      formatCurrency( c(1:5), currency = "", interval = 3, mark = ",", digits = 2)
+      formatCurrency( c(1:5), currency = "$", interval = 3, mark = ",", digits = 2)
 ```
 
 ## Ejemplo de Gráfica Interactiva
