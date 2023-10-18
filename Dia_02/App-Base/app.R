@@ -24,7 +24,7 @@
 # ******************************************************************************
 
 #install.packages("shiny")
-# install.packages("ggplot2")
+#install.packages("ggplot2")
 #install.packages("quantmod")
 
 library(shiny)
